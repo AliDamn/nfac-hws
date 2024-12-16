@@ -31,8 +31,13 @@ def SwapCharacters(a):
     new_str=a[-1]+a[1:-1]+a[0]
     return new_str
 print(SwapCharacters('Wood'))
-
+#7
 def Surface(a,b):
     surface=a*b
     return surface
 print(Surface(3,4))
+
+#8
+def Upper(a):
+    return a.upper()
+print(Upper('was'))
