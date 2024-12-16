@@ -26,4 +26,8 @@ def CheckOfVowel(a):
     return a.lower() in 'aeuyio'
 print(CheckOfVowel('A'))
 
-
+#6
+def SwapCharacters(a):
+    new_str=a[-1]+a[1:-1]+a[0]
+    return new_str
+print(SwapCharacters('Wood'))
