@@ -41,3 +41,10 @@ print(Surface(3,4))
 def Upper(a):
     return a.upper()
 print(Upper('was'))
+
+def Even(a):
+    if a%2==0:
+        return 'yes'
+    else:
+        return 'no'
+print(Even(4))
