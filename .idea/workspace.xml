@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3a74244-5cd8-4d2f-94aa-a2945d69f334" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pre-commit-config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hws/hw1/ex21.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hws/hw1/ex22.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nfac-hws/homework.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.pre-commit-config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/animals.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nfac-hws/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/nfac-hws/homework.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nfac-hws/.pre-commit-config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nfac-hws/file1.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nfac-hws/hws/hw1/ex21.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nfac-hws/hws/hw1/ex22.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nfac-hws/pyproject.toml" beforeDir="false" />
