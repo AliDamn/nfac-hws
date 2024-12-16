@@ -53,3 +53,8 @@ print(Even(4))
 def TheFirstThree(a):
     return a[0:3]
 print(TheFirstThree('homework'))
+
+#11
+def Inter(a,b):
+    return f"Hello {a},my age is {b}"
+print(Inter('Ali',8))
