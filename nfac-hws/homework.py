@@ -58,3 +58,50 @@ print(TheFirstThree('homework'))
 def Inter(a,b):
     return f"Hello {a},my age is {b}"
 print(Inter('Ali',8))
+
+#12
+def stringSlicing(s):
+    return s[2:6]
+print(stringSlicing("HelloWorld"))
+#13
+def TypeConversion(num_str):
+    return int(num_str)
+print(TypeConversion("42"))
+#14
+def repetition(word):
+    return word*3
+print(repetition("Hi"))
+#15
+def calculate_remainder(a, b):
+    quotient = a // b
+    remainder = a % b
+    return quotient, remainder
+print(calculate_remainder(17, 4))
+#16
+def floatDivision(x, y):
+    return x / y
+print(floatDivision(22, 7))
+#17
+def count(sentence, char):
+    return sentence.count(char)
+print(count("banana", "a"))
+#18
+def sequences():
+    return "She said, \"Hello, world!\""
+print(sequences())
+#19
+def MultiLineString():
+    return """This is the first line.
+This is the second line.
+This is the third line."""
+print(MultiLineString())
+#20
+def exponentiation(base, exponent):
+    return base ** exponent
+print(exponentiation(3, 4))
+
+
+
+
+
+
