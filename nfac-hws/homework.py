@@ -16,4 +16,10 @@ def LengthOfString(a):
     return total
 print(LengthOfString('rainbow'))
 
+#4
+def SumOfStrings(a,b):
+    return a+b
+print(SumOfStrings('Hello','Ali'))
+
+
 
