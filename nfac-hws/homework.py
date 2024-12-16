@@ -21,5 +21,9 @@ def SumOfStrings(a,b):
     return a+b
 print(SumOfStrings('Hello','Ali'))
 
+#5
+def CheckOfVowel(a):
+    return a.lower() in 'aeuyio'
+print(CheckOfVowel('A'))
 
 

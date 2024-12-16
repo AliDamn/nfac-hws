@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3a74244-5cd8-4d2f-94aa-a2945d69f334" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nfac-hws/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/nfac-hws/homework.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nfac-hws/.pre-commit-config.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nfac-hws/file1.txt" beforeDir="false" />
