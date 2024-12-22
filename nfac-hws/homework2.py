@@ -306,10 +306,10 @@ is_power_of_two(10) -> False
 
 def is_power_of_two(n: int) -> bool:
     if n <= 0:
-        return False  # Отрицательные числа и ноль не являются степенями двойки
-    while n % 2 == 0:  # Пока число делится на 2
-        n //= 2        # Делим его на 2
-    return n == 1      # Если в конце получилось 1, это степень двойки
+        return False
+    while n % 2 == 0:
+        n //= 2
+    return n == 1
 print(is_power_of_two(8))
 
 
