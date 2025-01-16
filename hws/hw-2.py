@@ -45,7 +45,6 @@ Write a function "flatten(nested_list: List[List[Any]]) -> List[Any]" that uses 
 Example:
 flatten([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) -> [1, 2, 3, 4, 5, 6, 7, 8, 9]
 """
-from typing import List, Any
 
 def flatten(nested_list: List[List[Any]]) -> List[Any]:
     return [item for list in nested_list for item in list]
@@ -59,7 +58,7 @@ Write a function "squares_gen(n: int) -> Generator[int]" that uses a generator e
 Example:
 list(squares_gen(5)) -> [0, 1, 4, 9, 16]
 """
-from typing import Generator
+
 
 def squares_gen(n: int) -> Generator[int, None, None]:
     return (i**2 for i in range(n))
@@ -89,7 +88,7 @@ Write a function "index_map(text: str) -> Dict[str, int]" that uses a dictionary
 Example:
 index_map("hello") -> {'h': 0, 'e': 1, 'l': 3, 'o': 4}
 """
-from typing import Dict
+
 
 def index_map(text: str) -> Dict[str, int]:
     return {char: idx for idx, char in enumerate(text)}
