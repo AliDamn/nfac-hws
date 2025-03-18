@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Cars</title>
+</head>
+<body>
+
+<form action="/cars/search" method="get">
+    <input type="text" name="q" value="{{ q }}">
+    <input type="submit" value="Поиск">
+</form>
+
+{% if cars %}
+    <ul>
+        {% for car in cars %}
+            <li>{{ car.name }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Машины не найдены.</p>
+{% endif %}
+
+</body>
+</html>
