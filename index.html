@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+    <h1>Books List</h1>
+    <ul>
+        {% for book in books %}
+            <li><a href="/books/{{ book.id }}">{{ book.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <div>
+        {% if has_prev %}
+            <a href="/books?page={{ page - 1 }}"><button>Назад</button></a>
+        {% endif %}
+        {% if has_next %}
+            <a href="/books?page={{ page + 1 }}"><button>Вперед</button></a>
+        {% endif %}
+    </div>
+</body>
+</html>
