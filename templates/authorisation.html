@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+</head>
+<body>
+    <form action="/signup" method="post">
+        <input type="email" name="email"><br>
+        <input type="text" name="full_name"><br>
+        <input type="password" name="password"><br>
+        <input type="submit" value="Sign Up">
+    </form>
+    {%if message%}
+    <p>{{message}}</p>
+    {%endif%}
+</body>
+</html>
