@@ -18,8 +18,9 @@ class Flowers(BaseModel):
     price_per_item: int
 
 @app.get("/flowers", response_class=HTMLResponse)
-async def add_flowers(request: Request):
-    return templates.TemplateResponse("flowers.html", {"request": request, "flowers": flower.flowers_db})
+async def show_flowers(request: Request):
+    items = flower.get_all()
+    return templates.TemplateResponse("flowers.html", {"request": request, "flowers": items})
 
 @app.post("/flowers", response_class=HTMLResponse)
 async def get_flowers(request: Request, price_per_item: int, name: str, quantity: int):

@@ -1,13 +1,30 @@
 from fastapi import FastAPI, Request, Form, Response, HTTPException
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, RedirectResponse,JSONResponse
 from fastapi.templating import Jinja2Templates
 from repository import UsersRepository
+from fastapi.security import  OAuth2PasswordBearer
+from jose import jwt
+from datetime import datetime, timedelta
 
 app = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
 
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+
 user_repo = UsersRepository()
+
+SECRET_KEY = "mysecret"
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
+
+def create_access_token(data: dict, expires_delta: timedelta = None):
+    to_encode = data.copy()
+    if expires_delta:
+        expire = datetime.utcnow() + expires_delta
+        to_encode.update({"exp": expire})
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    return encoded_jwt
 
 @app.get("/signup", response_class=HTMLResponse)
 def get_signup_form(request: Request):
@@ -17,9 +34,8 @@ def get_signup_form(request: Request):
 async def signup(request: Request, email: str = Form(...), password: str = Form(...), full_name: str = Form(...)):
     if email in user_repo.users_db:
         raise HTTPException(status_code=404, detail='Email already registered')
-
     user_repo.create_user(email, full_name, password)
-    return RedirectResponse("/login", status_code=303)
+    return JSONResponse("Ok",status_code=200)
 
 @app.get("/login", response_class=HTMLResponse)
 async def get_login_form(request: Request):
@@ -34,9 +50,12 @@ async def login_confirm(request: Request, email: str = Form(...), enter_password
     if user["password"] != enter_password:
         raise HTTPException(status_code=401, detail="Incorrect password")
 
-    response.set_cookie(key="user_email", value=email, httponly=True)
+    access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    access_token = create_access_token(data={"sub": email}, expires_delta=access_token_expires)
 
-    return RedirectResponse("/profile", status_code=303)
+    response = RedirectResponse(url="/profile", status_code=303)
+    response.set_cookie(key="access_token", value=access_token, httponly=True)
+    return response
 
 @app.get("/profile",response_class=HTMLResponse)
 async def dashboard(request: Request):

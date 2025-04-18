@@ -11,5 +11,10 @@
         <input type="text" name="price_per_item">
         <input type="submit" value="Added">
     </form>
+    <ul>
+      {% for flower in flowers %}
+        <li>{{ loop.index }}. {{ flower.name }} — Цена: {{ flower.price_per_item }}, Кол-во: {{ flower.quantity }}</li>
+      {% endfor %}
+    </ul>
 </body>
 </html>
