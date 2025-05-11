@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, Form, HTTPException, Depends
+from fastapi import Request, Form, HTTPException, Depends
 from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 from repository import UsersRepository
@@ -7,8 +7,9 @@ from jose import jwt
 from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
 from repository import SessionLocal
+from fastapi import APIRouter
 
-app = FastAPI()
+router = APIRouter()
 templates = Jinja2Templates(directory="templates")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
@@ -33,11 +34,11 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
     return encoded_jwt
 
 # signup
-@app.get("/signup", response_class=HTMLResponse)
+@router.get("/signup", response_class=HTMLResponse)
 def get_signup_form(request: Request):
     return templates.TemplateResponse("authorisation.html", {"request": request})
 
-@app.post("/signup", response_class=HTMLResponse)
+@router.post("/signup", response_class=HTMLResponse)
 async def signup(
     request: Request,
     email: str = Form(...),
@@ -54,11 +55,11 @@ async def signup(
     return JSONResponse(content={"message": "Ok"}, status_code=200)
 
 # login
-@app.get("/login", response_class=HTMLResponse)
+@router.get("/login", response_class=HTMLResponse)
 async def get_login_form(request: Request):
     return templates.TemplateResponse("login.html", {"request": request})
 
-@app.post("/login")
+@router.post("/login")
 async def login_confirm(
     request: Request,
     email: str = Form(...),
@@ -82,7 +83,7 @@ async def login_confirm(
     response.set_cookie(key="user_email", value=email)
     return response
 
-@app.get("/profile", response_class=HTMLResponse)
+@router.get("/profile", response_class=HTMLResponse)
 async def dashboard(request: Request, db: Session = Depends(get_db)):
     user_email = request.cookies.get("user_email")
     if not user_email:
